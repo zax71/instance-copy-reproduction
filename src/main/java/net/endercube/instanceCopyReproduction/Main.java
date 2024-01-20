@@ -9,11 +9,6 @@ import net.minestom.server.entity.Player;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
 import net.minestom.server.extras.MojangAuth;
-import net.minestom.server.instance.AnvilLoader;
-import net.minestom.server.instance.InstanceContainer;
-import net.minestom.server.instance.InstanceManager;
-
-import java.nio.file.Path;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,7 +20,7 @@ public class Main {
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             final Player player = event.getPlayer();
-            event.setSpawningInstance(MainInstance.INSTANCE);
+            event.setSpawningInstance(MainInstance.ACTIVE_INSTANCE);
             player.setRespawnPoint(new Pos(0, 100, 0));
         });
 

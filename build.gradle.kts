@@ -18,6 +18,9 @@ dependencies {
 
     // Logger
     implementation("ch.qos.logback:logback-classic:1.4.14")
+
+    // Polar
+    implementation("dev.hollowcube:polar:1.6.1")
 }
 
 java {
